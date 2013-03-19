@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <!-- use meta 'viewport' tag to specify how the browser should display the page zoom level and dimensions -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mobile Resource Map</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.0.css">
+	<link rel="shortcut icon" href="docs/_assets/favicon.ico">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.3.0.js"></script>
+</head>
+<body>
+    <div data-role="page"> 
+        <div data-role="header"></div> 
+	<div data-role="content">
+            <form>
+                <img border="0" src="resource-map.png">
+                
+                <h2>Log in</h2>
+                
+                <label for="user_email"> Email </label>
+                <input id="user_email" name="user[email]" type="email" />
+                
+                <label for="user_password"> Password </label>
+                <input id="user_password" name="user[password]" type="password" />
+                
+                <label for="user_remember_me"> Remember me </label>
+                <input id="user_remember_me" name="user[remember_me]" type="checkbox" />
+                
+                <button type="submit"> Log In</button>
+                
+                <a href="http://insteed.org">© 2013 InSTEDD</a>
+            </form>
+        </div> 
+	<div data-role="footer">
+            
+        </div> 
+    </div> 
+</body>
+</html>
