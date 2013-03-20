@@ -1,27 +1,23 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+// function store token in cookie
+function authenticate(auth){
+    $.cookie("_token", auth.token);
+    alert(auth.token);
+}
 
-$(function(){
-  $.ajaxSetup({
-    beforeSend: function( xhr ) {
-      var token = $('meta[name="csrf-token"]').attr('content');
-      if (token) xhr.setRequestHeader('X-CSRF-Token', token);
-    }
-  });
-});
-
-function login (){
+function login(){
+    
+ email = $("#user_email").val();
+ password = $("#user_password").val();
+ 
   $.ajax({
-    url: 'index.html',
+    url: 'http://localhost:3000/api/tokens.json',
+    dataType: "jsonp",
     type: 'POST',
-    data: {user: {user_email: 'email', user_password: 'password'}},
-    success: function(data, textStatus, xhr) {
-        alert("Success");
-    //called when successful
+    success: function(data) {
+        console.dir(data);
+    },
+    beforeSend: function(xhr){ 
+           xhr.setRequestHeader('Authorization', 'Basic ' + btoa(email + ":" + password));
     }
   });
 }
-
-
